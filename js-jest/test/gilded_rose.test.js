@@ -81,13 +81,13 @@ describe("updateQuality", function() {
     expect(items[0].quality).toBe(0);
   });
 
-  xit("decreases Conjured Quality by 2", function() {
+  it("decreases Conjured Quality by 2", function() {
     const gildedRose = new Shop([new Item("Conjured", 1, 5)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(3);
   });
 
-  xit("decreases Conjured Quality by 4 when expired", function() {
+  it("decreases Conjured Quality by 4 when expired", function() {
     const gildedRose = new Shop([new Item("Conjured", 0, 5)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(1);
