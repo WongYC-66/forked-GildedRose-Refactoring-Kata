@@ -9,6 +9,11 @@ class Item {
 class Shop {
   constructor(items = []) {
     this.items = items.map(item => ShopableItem.for(item));
+    // this.items = items
+    // for tesxttest_fixture
+    for (let i = 0; i < items.length; i++) {
+      items[i] = this.items[i]
+    }
   }
   updateQuality() {
     this.items.forEach(item => {
@@ -65,16 +70,19 @@ class ShopableAgedBrid extends ShopableItem {
 
 class ShopableSulfuras extends ShopableItem {
   static canHandle(name) {
-    return name == 'Sulfuras, Hand of Ragnaros'
+    return name.includes('Sulfuras')
   }
   updateQuality() {
+    // do nothing
+  }
+  updateSellIn() {
     // do nothing
   }
 }
 
 class ShopableBackstagePass extends ShopableItem {
   static canHandle(name) {
-    return name == 'Backstage passes to a TAFKAL80ETC concert'
+    return name.includes('Backstage passes')
   }
   updateQuality() {
     if (this.sellIn <= 0) {
@@ -92,7 +100,7 @@ class ShopableBackstagePass extends ShopableItem {
 
 class ShopableConjured extends ShopableItem {
   static canHandle(name) {
-    return name == 'Conjured'
+    return name.includes('Conjured')
   }
   updateQuality() {
     if (this.sellIn <= 0) {
