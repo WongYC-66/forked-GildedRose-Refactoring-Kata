@@ -54,7 +54,7 @@ class ShopableItem extends Item {
   }
 }
 
-class ShopableAgedBrid extends ShopableItem {
+class ShopableAgedBrie extends ShopableItem {
   static canHandle(name) {
     return name == 'Aged Brie'
   }
@@ -114,7 +114,7 @@ class ShopableConjured extends ShopableItem {
 
 // SOLID - Open closed principle
 ShopableItem.registry = [ShopableItem]
-ShopableItem.registry.unshift(ShopableAgedBrid)
+ShopableItem.registry.unshift(ShopableAgedBrie)
 ShopableItem.registry.unshift(ShopableSulfuras)
 ShopableItem.registry.unshift(ShopableBackstagePass)
 ShopableItem.registry.unshift(ShopableConjured)
